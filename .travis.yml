@@ -1,14 +1,8 @@
-before_deploy:
-  - |
-    pwd
-    ls -al 
-    mkdir jver
-    cp -r nativeplugins/JG-JVerification jver
-    tar -czvf jver.tar.gz jver
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: jver.tar.gz
+  file_glob: true
+  file: nativeplugins/*
   skip_cleanup: true
   on:
     tags: true
