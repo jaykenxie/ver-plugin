@@ -1,15 +1,3 @@
-language: node_js
-node_js:
-  - lts/*
-#deploy:
-#  provider: pages
-#  skip-cleanup: true
-#  local_dir: dist
-#  github-token: $GITHUB_TOKEN # a token generated on github allowing travis to push code on you repository
-#  keep-history: true
-#  target_branch: release
-#  on:
-#    branch: master
 before_deploy:
   - sudo apt-get -y install zip
   - zip -r jver.zip nativeplugins/ -r
