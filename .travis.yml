@@ -1,0 +1,14 @@
+before_deploy:
+ - |
+    pwd
+    ls -al 
+    mkdir jver
+    cp -r nativeplugins/JG-JVerification jver
+    tar -czvf jver.tar.gz jver
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true
