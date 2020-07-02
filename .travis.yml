@@ -1,11 +1,8 @@
 language: node_js
 node_js:
   - lts/*
-install:
-  - yarn add vue
 script:
   - npm init -y
-  - npm run build
 before_deploy:
   - sudo apt-get -y install zip
   - zip -r jver.zip nativeplugins/ -r
